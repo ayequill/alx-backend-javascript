@@ -9,7 +9,7 @@ const handleResponseFromAPI = (promise) => promise
     console.log('Got a response from the API');
     return {
       status: 200,
-      body: 'Success',
+      body: 'success',
     };
   })
   .catch(() => {
