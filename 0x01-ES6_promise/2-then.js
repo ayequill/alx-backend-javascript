@@ -14,7 +14,7 @@ const handleResponseFromAPI = (promise) => promise
   })
   .catch(() => {
     console.log('Got a response from the API');
-    return new Error({});
+    return new Error();
   });
 
 export default handleResponseFromAPI;
