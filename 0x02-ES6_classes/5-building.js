@@ -5,7 +5,9 @@ export default class Building {
    */
   constructor(sqft) {
     const notTarget = new.target !== Building;
-    if (notTarget && !Building.prototype.evacuationWarningMessage) {
+    const hasProp = !Building.prototype.evacuationWarningMessage;
+
+    if (notTarget && hasProp) {
       throw new Error(
         'Class extending Building must override evacuationWarningMessage',
       );
