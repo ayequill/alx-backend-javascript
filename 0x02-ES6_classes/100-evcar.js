@@ -14,6 +14,10 @@ class EVCar extends Car {
     this._range = value;
   }
 
+  static get [Symbol.species]() {
+    return Car;
+  }
+  /* eslint-disable */
   cloneCar() {
     return new Car();
   }
