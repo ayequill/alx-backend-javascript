@@ -4,14 +4,16 @@ export default class Building {
    * @param {number} sqft
    */
   constructor(sqft) {
+    const prop = Building.prototype.evacuationWarningMessage;
     const notTarget = new.target !== Building;
-    const hasProp = !Building.prototype.evacuationWarningMessage;
+    const isSameProp = this.evacuationWarningMessage === prop;
 
-    if (notTarget && hasProp) {
+    if (notTarget && !prop && isSameProp) {
       throw new Error(
         'Class extending Building must override evacuationWarningMessage',
       );
     }
+
     this._sqft = sqft;
   }
 
