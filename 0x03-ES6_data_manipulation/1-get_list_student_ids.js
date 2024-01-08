@@ -1,6 +1,6 @@
 /**
- * 
- * @param {Array} arr 
+ *
+ * @param {Array} arr
  * @returns {Array}
  */
 
