@@ -9,7 +9,7 @@ const cleanSet = (set, startStr) => {
     .filter((val) => val.startsWith(startStr))
     .map((str) => str.slice(startStr.length))
     .join('-');
-  return startStr ? res : '';
+  return startStr ? res : '\n';
 };
 
 export default cleanSet;
