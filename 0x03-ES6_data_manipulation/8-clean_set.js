@@ -10,7 +10,7 @@ export default function cleanSet(set, startStr) {
                 || typeof startStr !== 'string';
 
   return isNot ? '' : [...set]
-    .filter((val) => val.startsWith(startStr))
+    .filter((val) => val && val.startsWith(startStr))
     .map((str) => str.slice(startStr.length))
     .join('-');
 }
