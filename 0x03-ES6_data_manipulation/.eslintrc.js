@@ -21,6 +21,7 @@ module.exports = {
       'no-console': 'off',
       'no-shadow': 'off',
       'no-underscore-dangle': 'off',
+      'arrow-body-style': 'off',
       'no-restricted-syntax': [
         'error',
         'LabeledStatement',
