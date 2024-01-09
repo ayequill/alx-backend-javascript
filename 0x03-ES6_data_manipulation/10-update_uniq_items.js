@@ -1,10 +1,11 @@
 /**
  *
  * @param {Map} map
+ * @throws {Error}
  */
 
-const updateUniqueItems = (map) => {
-  if (!map instanceof Map) {
+export default function updateUniqueItems(map) {
+  if (!(map instanceof Map)) {
     throw new Error('Cannot process');
   }
   map.forEach((val, key) => {
@@ -12,6 +13,4 @@ const updateUniqueItems = (map) => {
       map.set(key, 100);
     }
   });
-};
-
-export default updateUniqueItems;
+}
