@@ -6,10 +6,10 @@
  */
 
 export default function cleanSet(set, startStr) {
-  if (!startStr || !set || !(set instanceof Set)) {
-    return '';
-  }
-  return [...set]
+  const isNot = !startStr || !set || !(set instanceof Set)
+                || typeof startStr !== 'string';
+
+  return isNot ? '' : [...set]
     .filter((val) => val.startsWith(startStr))
     .map((str) => str.slice(startStr.length))
     .join('-');
