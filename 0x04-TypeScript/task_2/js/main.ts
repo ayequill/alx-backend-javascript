@@ -35,7 +35,7 @@ class Teacher implements TeacherInterface {
   }
 
   workTeacherTasks(): string {
-    return 'Getting to director tasks';
+    return 'Getting to work';
   }
 }
 
@@ -53,3 +53,32 @@ const createEmployee: CreateEmployee = (salary) => {
 console.log(createEmployee(200));
 console.log(createEmployee(1000));
 console.log(createEmployee('$500'));
+
+const isDirector = (employee: Director | Teacher): boolean =>
+  employee instanceof Director;
+
+
+const executeWork = (employee: Director | Teacher): void => {
+  if (isDirector(employee)) {
+    console.log((employee as Director).workDirectorTasks());
+  } else {
+    console.log((employee as Teacher).workTeacherTasks()); 
+  }
+};
+
+executeWork(createEmployee(200));
+executeWork(createEmployee(1000));
+
+type Subjects = 'Math' | 'History';
+
+const teachClass = (todaysClass: Subjects) => {
+  if (todaysClass === 'Math') {
+    return 'Teaching Math';
+  }
+  if (todaysClass === 'History') {
+    return 'Teaching History';
+  }
+};
+
+console.log(teachClass('Math'));
+console.log(teachClass('History'));
