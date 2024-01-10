@@ -4,9 +4,7 @@ interface Name {
   readonly lastName: string;
 }
 
-interface Teacher {
-  readonly firstName: string;
-  readonly lastName: string;
+interface Teacher extends Name {
   fullTimeEmployee: boolean;
   location: string;
   yearsOfExperience?: number;
