@@ -42,7 +42,7 @@ app
         res.end(`${await countStudents(process.argv[2])}`);
         break;
       default:
-        res.end('Hello Holberton School!');
+        break
     }
   })
   .listen(1245);
