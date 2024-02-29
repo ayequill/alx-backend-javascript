@@ -17,12 +17,11 @@ const countStudents = async (path) => {
       .filter((student) => student.endsWith('SWE'))
       .map((stu) => stu.split(',')[0]);
 
-    (str += `Number of students in CS: ${
-      csStudents.length
-    }. List: ${csStudents.join(', ')}`),
-      (str += `\nNumber of students in SWE: ${
-        sweStudents.length
-      }. List: ${sweStudents.join(', ')}`);
+    str += `Number of students in CS: ${csStudents.length}. List: ${csStudents.join(', ')}`;
+
+    (str += `\nNumber of students in SWE: ${
+      sweStudents.length
+    }. List: ${sweStudents.join(', ')}`);
 
     return str;
   } catch (err) {
@@ -42,7 +41,7 @@ app
         res.end(`${await countStudents(process.argv[2])}`);
         break;
       default:
-        break
+        break;
     }
   })
   .listen(1245);
