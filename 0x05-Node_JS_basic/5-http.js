@@ -46,6 +46,7 @@ const app = http
         break;
     }
   })
-  .listen(1245);
+  .listen(3000);
 
 module.exports = app;
+module.exports.countStudents = countStudents;
