@@ -1,4 +1,4 @@
-const app = require('http');
+const http = require('http');
 const fs = require('fs');
 
 const countStudents = async (path) => {
@@ -17,11 +17,13 @@ const countStudents = async (path) => {
       .filter((student) => student.endsWith('SWE'))
       .map((stu) => stu.split(',')[0]);
 
-    str += `Number of students in CS: ${csStudents.length}. List: ${csStudents.join(', ')}`;
+    str += `Number of students in CS: ${
+      csStudents.length
+    }. List: ${csStudents.join(', ')}`;
 
-    (str += `\nNumber of students in SWE: ${
+    str += `\nNumber of students in SWE: ${
       sweStudents.length
-    }. List: ${sweStudents.join(', ')}`);
+    }. List: ${sweStudents.join(', ')}`;
 
     return str;
   } catch (err) {
@@ -30,7 +32,7 @@ const countStudents = async (path) => {
   }
 };
 
-app
+const app = http
   .createServer(async (req, res) => {
     res.writeHead(200, { 'Content-Type': 'text/plain' });
     switch (req.url) {
