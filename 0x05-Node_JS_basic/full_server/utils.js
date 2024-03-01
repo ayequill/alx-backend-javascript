@@ -21,7 +21,7 @@ export const readDatabase = async (path) =>
         });
       })
       .catch(() => {
-        reject(new Error({ error: 'Cannot load the database' }));
+        reject(new Error('Cannot load the database'));
       });
   });
 

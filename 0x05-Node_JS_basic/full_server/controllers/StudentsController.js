@@ -1,7 +1,7 @@
 import { readDatabase } from '../utils';
 
 class StudentsController {
-  static getAllStudents(req, res) {
+  static getAllStudents(_, res) {
     readDatabase(process.argv[2])
       .then((data) => {
         res
@@ -15,7 +15,7 @@ class StudentsController {
           );
       })
       .catch((err) => {
-        res.status(500).send(err.error);
+        res.status(500).send('Cannot load the database');
       });
   }
 
@@ -29,7 +29,7 @@ class StudentsController {
         }
       })
       .catch((err) => {
-        res.status(500).send(err.error);
+        res.status(500).send('Cannot load the database');
       });
   }
 }
