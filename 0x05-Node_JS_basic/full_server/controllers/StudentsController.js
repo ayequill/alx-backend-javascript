@@ -14,7 +14,7 @@ class StudentsController {
             }. List: ${data.SWE.join(', ')}`,
           );
       })
-      .catch((err) => {
+      .catch(() => {
         res.status(500).send('Cannot load the database');
       });
   }
@@ -28,7 +28,7 @@ class StudentsController {
           res.status(500).send('Major parameter must be CS or SWE');
         }
       })
-      .catch((err) => {
+      .catch(() => {
         res.status(500).send('Cannot load the database');
       });
   }
