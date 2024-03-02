@@ -5,3 +5,5 @@ function sendPaymentRequestToApi(totalAmount, totalShipping) {
     'The total is: ' + calculateNumber('SUM', totalAmount, totalShipping),
   );
 }
+
+module.exports = sendPaymentRequestToApi;
